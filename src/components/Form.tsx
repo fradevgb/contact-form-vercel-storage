@@ -30,7 +30,7 @@ export const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className=" max-w-[400px] p-8 m-auto space-y-8 border rounded border-white/10">
+    <form onSubmit={handleSubmit} className="text-left min-w-[400px] p-8 m-auto space-y-8 border rounded border-white/10">
       <Input
         name="email"
         id="email"
