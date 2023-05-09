@@ -14,7 +14,7 @@ export const Form = () => {
     const { email, name, message } = Object.fromEntries(formData.entries())
 
     // a llamar a la API
-    fetch('/api/kv-send-message', {
+    fetch('/api/postgre-send-message', {
       method: 'POST',
       body: JSON.stringify({ email, name, message }),
       headers: {
@@ -24,10 +24,6 @@ export const Form = () => {
       toast.success('Mensaje enviado con exito')
       form.reset()
       confetti()
-
-      // poco hack, funciona
-      const $view = document.querySelector('#count-views')
-      if ($view != null) $view.innerHTML = `${Number($view.textContent) + 1 }`
     }).catch(() => {
       toast.error('Hubo un error al enviar el mensaje')
     })
